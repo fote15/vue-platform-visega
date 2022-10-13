@@ -2,7 +2,7 @@
   <section class="main__content">
     <div class="container">
       <div class="row">
-        <p class="cart__wrap"><span class="cart__btn">вернуться назад</span></p>
+        <p class="cart__wrap"><span class="cart__btn">вернуться назад</span></p>хуй
       </div>
     </div>
   </section>
