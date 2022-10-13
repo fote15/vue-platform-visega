@@ -1,0 +1,136 @@
+
+
+table{
+	text-align: center;
+	font-weight: bold;
+}
+
+td{
+}
+
+.new_order{
+	color: #4745B7;
+}
+
+.delivered{
+}
+
+.appoint{
+	color: #FF9800;
+}
+
+
+table .btn_info{
+	border:2px solid #BFBFBF!important;
+}
+
+table .btn{
+	width: 100%;
+}
+
+.dash_bar{
+	display: flex;
+	justify-content: space-between;
+}
+
+.dash_bar_search{
+	display: flex;
+	position: relative;
+}
+
+.input__orders{
+	margin-right: 15px;
+}
+
+.dash_bar_statuses .btn-outline-new_order{
+	border: 1px solid #4745B7;
+	color: #4745B7;
+	background: rgba(71, 69, 183, 0.1);
+	font-weight: 600;
+}
+
+.dash_bar_statuses .btn-outline-delivered{
+	border: 1px solid #00AF54;
+	color: #00AF54;
+	background: rgba(0, 175, 84, 0.1);
+	font-weight: 600;
+}
+
+.dash_bar_statuses .btn-outline-appoint{
+	border: 1px solid #FF9800;
+	color: #FF9800;
+	background: rgba(255, 152, 0, 0.1);
+	font-weight: 600;
+}
+.dash_bar_statuses .btn-outline-appoint2{
+	color: #FF9800;
+	font-weight: 600;
+	color: #019EFF;
+	
+background: rgba(1, 158, 255, 0.1);
+border: 1px solid rgba(1, 158, 255, 0.1);
+border-radius: 2px;
+
+}
+
+.dash_bar_statuses .btn-outline-appoint3{
+	color: white;
+	font-weight: 600;
+border: 1px solid rgba(1, 158, 255, 0.1);
+border-radius: 2px;
+background: #B9121B;
+border-radius: 4px;
+
+width: 179px;
+height: 42px;
+
+}
+
+.filter_modal{
+	display: none;
+	position: absolute;
+	background: #ffffff;
+	width: 100%;
+
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+	border-radius: 2px;
+
+	padding: 12px;
+	top: 0;
+	margin-top: 40px;
+}
+
+.filter_modal .input__city, .filter_modal .input__status{
+	font-size: 14px;
+}
+
+.input__city{
+	margin-bottom: 10px;
+}
+
+.dash_bar_statuses .btn-outline-new_order:hover{
+	color: #4745B7;
+}
+
+.dash_bar_statuses .btn-outline-delivered:hover{
+	color: #00AF54;
+}
+
+.dash_bar_statuses .btn-outline-appoint:hover{
+	color: #FF9800;
+}
+
+@media only screen and (max-width: 1100px) {
+	.dash_bar {
+	  
+		display: block!important;
+	}
+	.dash_bar_search{
+		margin-bottom: 20px;
+	}
+	.dash_bar_statuses .btn{
+		margin-bottom: 5px;
+	}
+  }
+  

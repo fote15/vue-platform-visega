@@ -1,0 +1,965 @@
+/*   Theme default css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+@font-face {
+  font-family: American;
+  src: url(../fonts/using/american.ttf);
+}
+@font-face {
+  font-family: Bertilion;
+  src: url(../fonts/using/bertilion.ttf);
+}
+@font-face {
+  font-family: Amsterdam;
+  src: url(../fonts/using/amsterdam.ttf);
+}
+#app {
+  background-color: black;
+  font-family: Bertilion;
+  font-weight: 400; 
+  color: #ffffff;
+  font-size: 16px; 
+  background: #272727;
+  position: relative;
+  z-index: 2;
+}
+.header-bottom a{
+  color: #000;
+}
+.header-bottom a:hover{
+  color: #000;
+}
+
+.hero-img{
+  z-index: -1;
+}
+.border-none {
+  border: none !important;
+}
+button {
+  cursor: pointer; }
+
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none; }
+
+a:focus,
+a:hover {
+  color: inherit;
+  text-decoration: none; }
+
+a,
+button {
+  color: inherit;
+  outline: medium none; }
+
+button:focus, input:focus, input:focus, textarea, textarea:focus {
+  outline: 0; }
+
+ 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Bertilion;
+  color: #ffffff;
+  margin-top: 0px; 
+  font-weight: 500;
+  text-transform: normal;
+ }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit; }
+
+h1 {
+  font-size: 40px;
+  font-weight: 500; }
+
+h2 {
+  font-size: 35px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 22px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 16px; }
+
+ul {
+  margin: 0px;
+  padding: 0px; }
+
+li {
+  list-style: none; }
+.container{
+ /* max-width: 1540px;*/
+}
+ .padding{
+   padding-right: 0;
+ }
+ #app a{
+  text-decoration: none;
+ }
+ img{
+  max-width: 100%;
+ }
+ .pd-0{
+  padding: 0 !important;
+ }
+/* default-css END 
+================================== */
+ 
+
+
+.header-area { 
+  width: 100%;
+  z-index: 99;  
+} 
+/* humbergar */
+.bar a {
+  width: 35px;
+  height: 35px;
+  float: right;
+  position: relative;
+} 
+.bar a span {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  display: block;
+  position: relative;
+  top: 17px;
+  border-radius: 30px;
+  transition: .3s;
+} 
+.bar a span:before {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: 10px;border-radius: 30px;transition: .3s;} 
+.bar a span:after {left: 0;content: "";position: absolute;width: 100%;height: 100%;background: #fff;bottom: -10px;border-radius: 30px;transition: .3s;}
+ 
+/* humbarger END */
+ 
+
+/* mobile-menu START */
+.mobile-menu {
+  position: fixed;
+  overflow: auto;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  background: #272727;
+  z-index: 99;
+  box-shadow: 0px 0px 9px -1px #737373;
+  top: 0;
+  left: 0;
+  transition: .3s;
+  margin-left: -4000px;
+}
+.mnuCnt{
+  padding-left: 40px;
+  padding-top: 40px;
+}
+.siteBar{
+  margin-left: 0; 
+}
+.mobile-menu li {
+  display: block;
+}
+
+.mobile-menu li a {
+  display: block;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 41px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.mnuCnt > img{
+  width: 250px;
+  opacity: .5;
+  margin-bottom: 30px;
+}
+.mobile-menu > img {
+  width: 100%;
+}
+.mobile-menu a.bars {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 42px;
+  color: #fff;
+  box-shadow: 0px 0px 17px -2px #0000004a;
+  z-index: 99;
+}
+.logo-area a {
+  display: block;
+}
+
+.logo-area a img {
+  max-width: 340px;
+  width: 100%;
+}
+
+.header-top-wrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-top-wrp a.contactBtn {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  width: 49px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #D9D9D9;
+  transition: .3s;
+  transform: translateY(-50%);
+}
+
+.header-top-wrp a.contactBtn > img {
+  max-width: 22px;
+  display: block;
+}
+
+.header-top {
+  padding: 40px 0;
+  background: #1F1F1F;
+}
+
+.header-top-wrp form {
+  width: 268px;
+  height: 49px; 
+  background: #FFFFFF;
+  border: 1px solid #FFC01D;
+  border-radius: 4px;
+  position: relative;
+}
+
+.header-top-wrp form input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-family: American;
+  font-size: 24px;
+}
+
+.header-top-wrp form button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.header-bottom {
+  background: #F1D693;
+}
+
+.header-bottom ul.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 62px;
+/* or 141% */
+  text-transform: uppercase;
+  color: #000000;
+}
+
+
+
+
+
+
+
+
+
+/* Header section END AND Hero-section STARTED*/
+
+
+
+
+
+
+ 
+
+
+.hero-area {
+  position: relative;
+  padding: 40px 0; 
+  background: url(../img/hback.png);
+  background-size: cover;
+  border-bottom: 20px solid #D4B07C;
+  z-index: 2;
+} 
+.hero-area img.hero-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+.hero-area img.hero-shape {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  height: 100%;
+}
+.hero-wrp {
+  text-align: right;
+}
+
+.hero-wrp > img {
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-wrp > a {
+  margin-top: 40px;
+}
+
+.hero-img {display: block;text-align: right;}
+.t_btns{
+  display: none;
+}
+
+ 
+
+
+
+/* Hero section END AND Kursy-section STARTED*/
+
+
+
+.kursy-area{
+  border-bottom: 20px solid #D4B07C;
+}
+.kursy-wrp {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 400px;
+  background: url(../img/bckShape.png);
+  background-repeat: repeat;
+}
+
+.kursy-wrp img.shape,
+.kursy-wrp img.shape2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 35px;
+  max-height: 100%;
+}
+
+.kursy-wrp img.shape2 {
+  left: auto;
+  right: 0;
+}
+
+h1.title {
+  font-size: 96px;
+  line-height: 140px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.kurcy-banners {
+  display: block;
+}
+
+.kurcy-banners img {
+  display: block;
+  width: 100%;
+  margin-bottom: -7px;
+}
+
+ 
+
+
+
+
+/* Kursy section END AND Intro-section STARTED*/
+
+
+
+
+.intro_top {  
+  padding-top: 32px; 
+  position: relative;
+  z-index: 2;
+}
+.intro_top img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: .5;
+}
+
+.intro-vdo {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #1f1f1f;
+}
+
+.intro-vdo > img {
+  width: 100%;
+}
+
+.intro-vdo a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+ 
+
+
+
+
+/* Intro section END AND Footer section STARTED*/
+
+
+
+
+footer {
+  background: #1F1F1F;
+  padding: 100px 0;
+}
+
+.footer-widget {}
+
+.footer-widget h3 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 55px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.footer-widget a {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'American';
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.footer-widget a img {
+  display: block;
+  max-width: 240px;
+}
+
+
+
+
+
+
+
+
+/* First page END And Second page STARTED */
+
+
+
+img.hero-b_img {
+  display: block;
+  width: 100%;
+}
+.iTwoVdo a {
+  display: block;
+  width: 100%;
+}
+.iTwoVdo-wrp {
+  padding-left: 40px;
+}
+.iTwoVdo-wrp h2 {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 110px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0px 11px 4px rgba(0, 0, 0, 0.75);
+}
+
+.iTwoVdo-wrp p {
+  font-family: 'Amsterdam';
+  font-size: 72px;
+  line-height: 79px;
+  text-transform: lowercase;
+  color: #E7C298;
+  text-shadow: 0px 6px 14px rgba(0, 0, 0, 0.65);
+}
+
+.introTwo {
+  background: url(../img/hback.png);
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.course-area {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background: url(../img/bckShape.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+}
+.course-area img.statuce {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.course-wrp {
+  margin-bottom: 50px;
+}
+
+.course-wrp h2 {
+  font-size: 127px;
+  line-height: 146px;
+  text-transform: uppercase;
+  color: #E7C298;
+  margin-bottom: 20px;
+}
+
+.course-wrp  p {
+  font-family: 'Amsterdam';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 79px;
+  text-transform: lowercase;
+  color: #FFFFFF;
+  margin-bottom: 70px;
+}
+
+.details {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+}
+
+.details > img.dtlimg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.cr-content {
+  padding: 260px 200px;
+}
+
+.cr-content li {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.iconOf {
+  display: flex;
+  width: 190px;
+  height: 190px;
+  background: #A90808;
+  border-radius: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.dltBLkWp span {
+  font-family: 'Amsterdam';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 53px;
+  text-transform: lowercase;
+  color: #E7C298;
+}
+
+.dltBLkWp  h4 {
+  font-family: 'Amsterdam';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 70px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.dltBLkWp p {
+  margin: 0;
+  font-family: 'American';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.cr-content > h1 {
+  font-size: 156px;
+  line-height: 179px; 
+  text-transform: uppercase;
+}
+/* ================================================= */
+/* ============   My page area start =============  */
+/* =============================================== */
+
+
+/* =============   frame page start  ==============  */
+.farme_main_area{
+  background: url('../img/banner/black.png') no-repeat scroll 0 0 / cover;
+  padding: 296px 0 265px 0;
+}
+.farme_main_text.text-center span{
+  font-family: 'Bertilion';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 62px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+.farme_main_text p{
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  color: #FFFFFF;
+}
+.farme_main_text h1{
+  color:#D02323;
+  font-family: 'Bodoni';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 140px;
+}
+.circle {
+  font-family: 'Amsterdam Deco One';
+  font-weight: 400;
+  font-size: 42px;
+  text-align: center;
+  text-transform: lowercase;
+  color: #BD9540;
+
+  background: radial-gradient(circle at 100% 100%, #2c2c2c 0, #2c2c2c 26px,
+   transparent 26px) 0% 0%/30px 30px no-repeat,            
+  radial-gradient(circle at 0 100%, #2c2c2c 0, #2c2c2c 26px,
+   transparent 26px) 100% 0%/30px 30px no-repeat,            
+  radial-gradient(circle at 100% 0, #2c2c2c 0, #2c2c2c 26px, 
+    transparent 26px) 0% 100%/30px 30px no-repeat,            
+  radial-gradient(circle at 0 0, #2c2c2c 0, #2c2c2c 26px, 
+    transparent 26px) 100% 100%/30px 30px no-repeat,            
+  linear-gradient(#2c2c2c, #2c2c2c) 50% 50%/calc(100% - 8px) calc(100% - 60px) no-repeat,            
+  linear-gradient(#2c2c2c, #2c2c2c) 50% 50%/calc(100% - 60px) calc(100% - 8px) no-repeat,            
+  linear-gradient(2deg, #bd9540 0%, #F7F6EB 100%);
+  border-radius: 30px;
+  padding: 4px 40px;
+  box-sizing: content-box;
+}
+/* =============   frame page End  ==============  */
+
+/* =============   result page start  ==============  */
+.result_main_area{
+  padding: 262px 0;
+  background: url('../img/banner/banner2.png') no-repeat scroll 0 0/ cover;
+  text-align: center;
+}
+.result_main_text h1{
+  font-family: 'Bertilion';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 142px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F3B329;
+}
+.result_main_text h2{
+  font-family: 'BodoniFLF';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 140px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.result_main_text p {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+/* =============   frame page End  ==============  */
+
+/* =============   Ragistration page start  ==============  */
+.registration_main_area1{
+  padding: 50px 0 500px 0;
+  overflow: hidden;
+}
+.registration_headerTop_single h3{
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  text-transform: lowercase;
+  color: #FFFFFF;
+}
+.registration_headerTop_single a {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  text-align: center;
+  text-decoration-line: underline;
+  text-transform: lowercase;
+  background: linear-gradient(180deg, #F7F6EB 20.31%, #BD9540 77.9%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  color: #BD9540;
+}
+
+.registration_headerTop_single p{
+  font-family: 'American Typewriter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.input_single_item input {
+  background: rgba(0, 0, 0, 0.28);
+  border: 2px solid #F1D693;
+  width: 100%;
+  color: #fff;
+  padding: 8px 17px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'American Typewriter';
+}
+.input_single_itemDesh {
+  border-bottom: 1px dashed #FCEEAF;
+  padding-bottom: 24px;
+}
+.input_single_itemAnother input{
+  border-bottom: none;
+  border-bottom: 1px dashed #FCEEAF;
+}
+
+/* radio btn area start  */
+.input_single_itemAnother {
+  border: 2px solid #F1D693;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'American Typewriter';
+  background: #272727;
+}
+.input_single_itemAnother_radio {
+  padding: 6px 18px;
+  border-bottom: 1px dashed #FCEEAF;
+}
+.input_single_itemAnother_radio2{
+  padding: 6px 18px;
+}
+
+/* The container */
+.containerRadio {
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the browser's default radio button */
+.containerRadio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+
+
+/* On mouse-over, add a grey background color */
+/* .containerRadio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+ */
+/* When the radio button is checked, add a blue background */
+.containerRadio input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containerRadio input:checked ~ .checkmark:after {
+  display: block;
+}
+.containerRadio input:checked ~ .checkmark:before {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containerRadio .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F1D693;
+}
+.input_single_itemAnother_radio:focus {
+  background: red;
+}
+
+/* =============   Ragistration page End  ==============  */
+
+/* =============   index page start  ==============  */
+.main_slider_area{
+  padding: 120px 0 90px 0;
+}
+.slider_conatainer{
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+}
+.main_slider_text{
+  position: relative;
+}
+.main_slider_area .owl-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_slider_area .owl-prev {
+  position: absolute;
+  left: -64px;
+}
+.main_slider_area .owl-next {
+  position: absolute;
+  right: -64px;
+}
+.main_slider_area .owl-prev img,
+.main_slider_area .owl-next img{
+  width: 30px;
+  height: auto;
+}
+.main_slider_area .homeTopSlider {
+  position: absolute;
+  top: -81px;
+  max-width: 1120px;
+  width: 100%;
+}
+.main_slider_area .sliderCounter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sliderCounter h3{
+  font-family: 'Bertilion';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#counter {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 79px;
+  text-transform: lowercase;
+
+  color: #FFFFFF;
+}
+
+
+
+/* =============   index page End  ==============  */
+
+/* =============================================== */
+/* ============   My page area End =============  */
+/* ============================================= */
+
+
+
+
+
+
+
+
+
+
+
+

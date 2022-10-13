@@ -1,0 +1,102 @@
+.main__content__title span{
+    float:right;
+    color:#000;
+}
+
+.main__content__title{
+	color: #B9121B;
+}
+
+.dash__card__count__table{
+	
+}
+
+.dash__card__count__table h4{
+	margin-bottom: 15px;
+}
+
+.attribute{
+	color: rgba(0, 0, 0, 0.7);
+	margin-bottom: 10px;
+}
+
+.set_courier_btn{
+	margin-top: auto;
+}
+
+.order_status{
+	margin-top: 15px;
+}
+
+.order_deliver{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.modal_bg{
+    font-family: 'Montserrat', sans-serif;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.my_modal{
+	text-align: center;
+	background: #fff;
+	padding: 40px 32px 29px;
+	margin:  0 20px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+	border-radius: 4px;
+}
+.modal_subtitle{
+	font-size: 19px;
+	color: rgba(0, 0, 0, 0.6);
+	max-width: 287px;
+	text-align: center;
+	margin: 15px auto 20px;
+}
+table {
+	font-weight: 600;
+}
+td{
+	max-width: 200px;
+}
+
+.my_modal .modal_btn{
+	width: 90%;
+	background: #B9121B;
+	margin-top: 20px;
+}
+
+.success_notification{
+	background: rgba(115, 190, 111, 1);
+	box-shadow: 0px 8px 14px rgba(16, 20, 45, 0.16), 0px 3.87387px 9.86002px rgba(16, 20, 45, 0.0898405);
+	border-radius: 8px;
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	color: #fff;
+	padding: 16px;
+}
+.modal_bg{
+	display: none;
+}
+.assign_courier{
+	display: none;
+}
+
+.courier_assigned{
+	width: 570px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: none;
+}
+
