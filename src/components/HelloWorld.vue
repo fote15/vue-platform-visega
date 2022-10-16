@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
     <div class="header-area">
-      <div class="header_wrap d-sm-none d-md-flex">
+      <div class="header_wrap d-none d-md-flex">
         <router-link to="/courses"> <span class="header_v">возрождение</span></router-link>
         <router-link to="/courses"><span class="header_vi">выбрать курс</span></router-link>
         <router-link to="/courses"><span class="header_vi">мероприятия</span></router-link>
         <router-link to="/courses"><span class="header_vi">корпоративное обучение</span></router-link>
 
         <div class="icon_wrap">
-          <router-link to="/courses"><span><img src="@/assets/img/cart.png" alt="" class="header__img"></span></router-link>
-          <router-link to="/courses"><span><img src="@/assets/img/telegram.png" alt="" class="header__img"></span></router-link>
-          <router-link to="/courses"><span><img src="@/assets/img/person.png" alt="" class="header__img"></span></router-link>
+          <router-link to="/courses"><span><img src="@/assets/img/cart.png" alt="" class="header__img"></span>
+          </router-link>
+          <router-link to="/courses"><span><img src="@/assets/img/telegram.png" alt="" class="header__img"></span>
+          </router-link>
+          <router-link to="/courses"><span><img src="@/assets/img/person.png" alt="" class="header__img"></span>
+          </router-link>
         </div>
       </div>
       <div class="header__mwrap bar d-md-none d-sm-flex">
@@ -27,10 +30,11 @@
     </div>
     <!-- mobile-menu START -->
     <div class="mobile-menu" :class="{ siteBar: isActiveMob }">
-      <a @click="isActiveMob = false" style="color: black; box-shadow: none" class="bars siteBar-btn">X</a>
+      <a @click="isActiveMob = false" style="color: white; box-shadow: none" class="bars siteBar-btn">X</a>
       <div class="mnuCnt">
-        <router-link to="/" @click="isActiveMob= false"><img width="250" style="opacity: 1; margin-bottom: 15px"
-            src="@/assets/img/tree.png" alt="" /></router-link>
+        <router-link to="/" @click="isActiveMob= false"><img width="190" style="opacity: 1; margin-bottom: 15px"
+            src="@/assets/img/mob_tree3.png" alt="" /></router-link>
+        <h1>выбрать курс</h1>
         <ul>
           <li>
             <router-link @click="isActiveMob= false" :to="'/corp'">КОРПОРАТИВНОЕ ОБУЧЕНИЕ</router-link>
@@ -49,6 +53,10 @@
             <router-link @click="isActiveMob= false" :to="'/webinar'">ВЕБИНАРЫ</router-link>
           </li>
         </ul>
+        <h1>о нас</h1>
+        <div class="mobile__e__btn">
+          <h1>вход</h1>
+        </div>
       </div>
     </div>
 
@@ -213,12 +221,51 @@ export default {
   transition: .3s;
 }
 
-.mobile-menu a {
-  color: #000000;
+.mnuCnt {
+  padding-right: 50px;
+}
+
+.mnuCnt h1 {
+  font-family: 'Bertilion';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 30px 0 30px 0;
+}
+
+.mnuCnt li {
+  font-family: 'Bertilion';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.49);
+
+}
+
+.mnuCnt a {
+  margin-bottom: 0 !important;
+
+}
+
+.mobile__e__btn {
+  border: 2px solid white;
+  border-radius: 26px;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .mobile-menu {
-  background-color: #fed076 !important;
+  background-color: #272727 !important;
 }
 
 .olyMob {
@@ -274,6 +321,7 @@ export default {
     font-size: 27px;
     margin-right: 25px;
   }
+
   .header__mstree {
     margin: -3px 65px 15px 50px;
   }
@@ -296,6 +344,7 @@ export default {
     width: 20px;
     margin: 21px 20px 21px 0px;
   }
+
   .header__mstree {
     margin: -3px 65px 15px 50px;
   }
@@ -306,6 +355,7 @@ export default {
     font-size: 24px;
     margin: 15px 20px 15px 20px;
   }
+
   .header__mstree {
     margin: -3px 65px 15px 50px;
   }
@@ -320,6 +370,7 @@ export default {
     width: 20px;
     margin: 20px 18px 20px 0px;
   }
+
   .header__mstree {
     margin: -3px 65px 15px 50px;
   }
