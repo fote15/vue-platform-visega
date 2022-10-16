@@ -2,15 +2,15 @@
   <div class="hello">
     <div class="header-area">
       <div class="header_wrap d-sm-none d-md-flex">
-        <router-link to="/courses"> <span class="header_v">возрождение</span></router-link>
+        <router-link to="/"> <span class="header_v">возрождение</span></router-link>
         <router-link to="/courses"><span class="header_vi">выбрать курс</span></router-link>
-        <router-link to="/courses"><span class="header_vi">мероприятия</span></router-link>
-        <router-link to="/courses"><span class="header_vi">корпоративное обучение</span></router-link>
+        <router-link to="/webinar"><span class="header_vi">мероприятия</span></router-link>
+        <router-link to="/corp"><span class="header_vi">корпоративное обучение</span></router-link>
 
         <div class="icon_wrap">
-          <router-link to="/courses"><span><img src="@/assets/img/cart.png" alt="" class="header__img"></span></router-link>
-          <router-link to="/courses"><span><img src="@/assets/img/telegram.png" alt="" class="header__img"></span></router-link>
-          <router-link to="/courses"><span><img src="@/assets/img/person.png" alt="" class="header__img"></span></router-link>
+          <router-link to="/cart"><span><img src="@/assets/img/cart.png" alt="" class="header__img"></span></router-link>
+          <router-link to="/"><span><img src="@/assets/img/telegram.png" alt="" class="header__img"></span></router-link>
+          <router-link to="/cabinet"><span><img src="@/assets/img/person.png" alt="" class="header__img"></span></router-link>
         </div>
       </div>
       <div class="header__mwrap bar d-md-none d-sm-flex">
