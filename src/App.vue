@@ -1,6 +1,7 @@
 <template>
   <div>
     <div id="app">
+      <Start v-if="six_sec"/>
       <HelloWorld />
 
       <router-view ref="childComponent" />
@@ -14,6 +15,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Footer from "./components/Footer.vue";
 import Alert from "./components/Alert.vue";
 import Login from "./views/Login.vue";
+import Start from "./components/StartAnim.vue";
 import Vue from "vue";
 import axios from "axios";
 
@@ -25,11 +27,14 @@ export default {
     HelloWorld,
     Footer,
     Login,
+    Start,
     Alert,
   },
   methods: {},
   data() {
-    return {};
+    return {
+      six_sec: true,
+    };
   },
   computed: {},
   watch: {
@@ -38,7 +43,9 @@ export default {
     },
   },
   beforeMount() {
-
+    setTimeout(()=>{
+      this.six_sec = false
+    },7000)
     if (localStorage.getItem("fullname")) {
       this.$store.state.fullname = localStorage.getItem("fullname");
     }

@@ -1,38 +1,7 @@
 <template>
   <section class="main__content">
     <!-- Hero-area STARTED -->
-    <div class="hero-area">
-      <img src="@/assets/img/hshape.png" alt="" class="hero-shape" />
-      <img src="" alt="" class="hero-img" />
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="hero-wrp">
-              <img src="" alt="" />
-              <div class="buttons_wrap">
-                <a @click="roCur('courses')"><img src="@/assets/img/btn.png" alt="" /></a>
-              </div>
-              <div class="buttons_wrap2">
-                <a @click="roCur('about')"><img src="@/assets/img/btn2.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-7"></div>
-        </div>
-      </div>
-
-      <div class="moble_main">
-        <li class="">
-          <router-link to="/" @click="roCur('courses')" href="#">КУРСЫ</router-link>
-        </li>
-        <li>
-          <router-link :to="'/webinar'" @click="isActiveMob = false" href="#">ОНЛАЙН-МЕРОПРИЯТИЯ</router-link>
-        </li>
-        <li>
-          <router-link :to="'/'" @click="roCur('about')" href="#">О НАС</router-link>
-        </li>
-      </div>
-    </div>
+    <div class="hero-area"></div>
     <!-- Hero-area END -->
     <!-- kursy-area STARTED -->
     <div class="kursy-area">
@@ -45,18 +14,34 @@
           <div class="row">
             <div class="col-md-8 offset-md-2">
               <div class="kursy-content" id="courses">
-                <h1 class="title">КУРСЫ</h1>
+                <div class="d-none d-md-block">
+                  <span class="title">КУРСЫ</span>
+                </div>
+                <div class="d-block d-md-none">
+                  <img src="@/assets/img/home_line.png" style="margin-bottom:20px;margin-top:0px" class="centered_image" alt="" />
+
+                  <h1 class="" style="margin-bottom:40px">КУРСЫ</h1>
+                </div>
+
                 <div class="kurcy-banners">
                   <div class="row">
-                    <div v-bind:key="x.id" v-for="x in courses" class="col-md-6">
+                    <div
+                      v-bind:key="x.id"
+                      v-for="x in courses"
+                      class="col-md-6"
+                    >
                       <div class="course_card">
-                        <img :src="x.photo" alt="" class="course__image">
+                        <img :src="x.photo" alt="" class="course__image" />
                         <div class="course__item__wrap">
-                          <span>{{x.lessons.length}} занятий</span>
-                          <img src="@/assets/img/Course__line.png" alt="" class="course__image__line d-none d-lg-block">
-                          <span>{{x.price}} Р</span>
+                          <span>{{ x.lessons.length }} занятий</span>
+                          <img
+                            src="@/assets/img/Course__line.png"
+                            alt=""
+                            class="course__image__line d-none d-lg-block"
+                          />
+                          <span>{{ x.price }} Р</span>
                         </div>
-                        <p class="Course__about">{{x.description}}</p>
+                        <p class="Course__about">{{ x.description }}</p>
                         <div class="course__btn__wrap d-none d-md-flex">
                           <a class="course__btn_mr">
                             <div class="course__btn">в корзину</div>
@@ -65,7 +50,9 @@
                             <div class="course__btn">подробнее</div>
                           </a>
                         </div>
-                        <div class="course__btn__mob course__btn d-md-none">В корзину</div>
+                        <div class="course__btn__mob course__btn d-md-none">
+                          В корзину
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -75,10 +62,12 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <h1 class="title d-none d-md-block" style="max-width: 856px; margin: 0 auto" id="about">
-          О НАС
-        </h1>
+      <div
+        class="container kursy-content d-none d-md-block"
+        style="padding-bottom: 80px;padding-top: 0px;"
+      >
+        <img src="@/assets/img/home_line.png" class="centered_image" alt="" />
+        <span class="title" style="margin: 0 auto" id="about"> О НАС </span>
       </div>
     </div>
     <!-- kursy-area END -->
@@ -93,20 +82,33 @@
         </div>
       </div>
       <div class="intro-vdo d-none d-md-block">
-        <video autoplay muted playsinline loop style="width: 100%" height="570"
-          poster="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png">
-          <source src="https://education-st.gnt-it.ru//video//e/8/9/d/4/6335a43b1bc93.mp4"
-            type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <video
+          autoplay
+          muted
+          playsinline
+          loop
+          style="width: 100%"
+          height="570"
+          poster="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
+        >
+          <source
+            src="https://education-st.gnt-it.ru//video//e/8/9/d/4/6335a43b1bc93.mp4"
+            type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+          />
           Тег video не поддерживается вашим браузером.
-          <a href="http://techslides.com/demos/sample-videos/small.mp4">Скачайте видео</a>.
+          <a href="http://techslides.com/demos/sample-videos/small.mp4"
+            >Скачайте видео</a
+          >.
         </video>
-
-
       </div>
 
       <div class="d-block d-md-none mob_about">
         <div class="container">
-          <h1 class="title d" style="max-width: 856px; margin: 0 auto; margin-bottom: 60px" id="about">
+          <h1
+            class="title d"
+            style="max-width: 856px; margin: 0 auto; margin-bottom: 60px"
+            id="about"
+          >
             О НАС
           </h1>
 
@@ -213,6 +215,9 @@ export default {
     },
   },
   mounted() {
+    setTimeout(() => {
+      this.roCur("courses");
+    }, 7000);
     window.addEventListener("load", videoScroll);
     window.addEventListener("scroll", videoScroll);
 
@@ -237,9 +242,6 @@ export default {
         }
       }
     }
-
-
-
 
     const element = document.getElementById("courses");
     const offset = 0;
@@ -287,6 +289,22 @@ export default {
 };
 </script>
 <style scoped>
+.centered_image {
+  margin: 80px auto;
+  display: block;
+}
+.kursy-content .title {
+  margin-bottom: 80px;
+  display: inline-block;
+  background-image: url(@/assets/img/currama.png);
+  font-size: 128px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 0 45px;
+}
+.kursy-content {
+  text-align: center;
+}
 .course_card {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 29px;
@@ -296,7 +314,6 @@ export default {
 
 .course__image {
   width: 100%;
-
 }
 
 .course__item__wrap {
@@ -304,12 +321,11 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding-top: 19px;
-
 }
 
 .course__item__wrap span {
   font-size: 32px;
-  font-family: 'Amsterdam Deco One';
+  font-family: "Amsterdam Deco One";
 }
 
 @media (max-width: 1400px) and (min-width: 990px) {
@@ -354,10 +370,7 @@ export default {
   .kursy-wrp {
     background-image: none;
   }
-
 }
-
-
 
 .course__image__line {
   transform: translateY(-4px);
@@ -375,15 +388,14 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 39px;
-  color: #D4B07C;
+  color: #d4b07c;
   font-size: 36px;
-  font-family: 'Amsterdam Deco One';
+  font-family: "Amsterdam Deco One";
 }
 
 .course__btn_mr {
   margin-right: 14px;
 }
-
 
 .course__btn {
   display: flex;
@@ -392,22 +404,20 @@ export default {
   width: 120px;
   height: 45px;
   border-radius: 50px;
-  border: 2px solid #F1D693;
+  border: 2px solid #f1d693;
   border-width: 2px;
   background-color: transparent;
-  font-family: 'Amsterdam Deco One';
+  font-family: "Amsterdam Deco One";
   font-size: 25px;
-
 }
 
 .course__btn__wrap {
   display: flex;
   justify-content: center;
 }
-.course__btn__mob{
+.course__btn__mob {
   margin: 0 auto;
 }
-
 
 .mob_about {
   background-image: url("@/assets/img/bg_a.png");
@@ -449,6 +459,9 @@ export default {
 .kursy-wrp {
   overflow: hidden;
   background-repeat: no-repeat !important;
+}
+.kursy-content {
+  padding-top: 80px;
 }
 
 .buttons_wrap {
