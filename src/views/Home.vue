@@ -43,14 +43,14 @@
                         </div>
                         <p class="Course__about">{{ x.description }}</p>
                         <div class="course__btn__wrap d-none d-md-flex">
-                          <a class="course__btn_mr">
+                          <span  class="course__btn_mr" @click="addToCart(x)"  >
                             <div class="course__btn">в корзину</div>
-                          </a>
-                          <a>
+                          </span>
+                          <router-link  class="course__btn_mr"  :to="'/course/'+x.id">
                             <div class="course__btn">подробнее</div>
-                          </a>
+                          </router-link>
                         </div>
-                        <div class="course__btn__mob course__btn d-md-none">
+                        <div class="course__btn__mob course__btn d-md-none" @click="addToCart(x)">
                           В корзину
                         </div>
                       </div>
@@ -198,6 +198,10 @@ export default {
     };
   },
   methods: {
+    addToCart(curse){
+      this.$store.state.cartData.push(curse);
+      localStorage.setItem('cartData',JSON.stringify(this.$store.state.cartData))
+    },  
     fullVid() {
       var elem = document.getElementById("myvideo");
       if (elem.requestFullscreen) {
@@ -394,6 +398,7 @@ export default {
 }
 
 .course__btn_mr {
+  cursor: pointer;
   margin-right: 14px;
 }
 
