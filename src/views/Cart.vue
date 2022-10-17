@@ -4,7 +4,7 @@
       <div class="row">
 
         <div class="cart__wrap"><span class="cart__btn">вернуться назад</span>
-          <h1 class="cart__course">все курсы</h1><span class="cart__btn"></span>
+          <h1 class="cart__course">ваш заказ</h1><span class="cart__btn"></span>
         </div>
         <div class="col-xl-8 col-md-12 ">
           <p class="cart__clear">очистить корзину</p>
@@ -27,6 +27,7 @@
               </div>
             </div>
           </div>
+
           <div class="card__wrapper">
             <div class="row">
               <div class="col-md-5"><img src="https://devtutor.ru/wp-content/uploads/2020/05/card-hover-870x400.jpg"
@@ -45,6 +46,8 @@
               </div>
             </div>
           </div>
+
+          
         </div>
         <div class="col-xl-4 col-md-12">
           <div class="total__wrap">
@@ -167,10 +170,8 @@ export default {
   align-items: center;
   font-size: 24px;
   line-height: 27.5px;
-  text-transform: uppercase;
   margin-top: 54px;
 }
-
 .cart__course {
   font-size: 72px;
   line-height: 79px;
@@ -232,7 +233,7 @@ export default {
   display: flex;
   justify-content: center;
   padding: 39px 0 75px 0;
-  border-bottom: 1px solid #F1D693;
+  border-top: 1px solid #F1D693;
   margin-bottom: 10px;
 }
 
@@ -362,7 +363,6 @@ export default {
   font-weight: 400;
   font-size: 36px;
   line-height: 72px;
-  text-transform: uppercase;
 }
 
 .cart__mi {
@@ -390,7 +390,6 @@ export default {
   font-weight: 400;
   font-size: 21px;
   line-height: 24px;
-  text-transform: uppercase;
 }
 
 .mcart__ss {
