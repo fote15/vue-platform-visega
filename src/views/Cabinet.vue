@@ -208,17 +208,14 @@
                   <h1>{{ x.letter }}</h1>
                   <h2>{{ x.for }}</h2>
                 </div>
-
                 <div v-else @click="activeLetter = 0">
                   <h2> БУКВА {{ x.letter }}</h2>
                   <h4 style="font-family: 'Am'">{{ x.title }}</h4>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-
         <img
           @click="ro_edit = 0"
           style="
@@ -244,7 +241,6 @@
                 $store.state.fullname
               }}</router-link>
             </h1>
-            <h3>ученик</h3>
             <h2>
               <router-link to="/courses">МОИ КУРСЫ</router-link>
             </h2>
@@ -373,26 +369,6 @@
                 />
               </div>
             </div>
-
-            <div
-              class="form-cabinet"
-              style="margin-top: 20px; height: 454px; position: relative"
-            >
-              <img
-                style="
-                  width: 130px;
-                  margin: 0 auto;
-                  display: block;
-                  cursor: pointer;
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                "
-                src="@/assets/img/btn_3.svg"
-                alt=""
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -428,10 +404,7 @@ export default {
     };
   },
   mounted() {
-    if (!this.$store.state.token) {
-      this.$router.push("/login");
-      return true;
-    }
+   
 
     axios
       .post(

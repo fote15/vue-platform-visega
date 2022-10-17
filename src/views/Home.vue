@@ -301,7 +301,7 @@ export default {
   margin-bottom: 80px;
   display: inline-block;
   background-image: url(@/assets/img/currama.png);
-  font-size: 128px;
+  font-size: 90px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 0 45px;

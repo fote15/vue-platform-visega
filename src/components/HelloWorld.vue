@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="header-area">
-      <div class="header_wrap d-sm-none d-md-flex">
+      <div class="header_wrap d-none d-md-flex">
         <router-link to="/"> <span class="header_v">возрождение</span></router-link>
         <router-link to="/courses"><span class="header_vi">выбрать курс</span></router-link>
         <router-link to="/webinar"><span class="header_vi">мероприятия</span></router-link>
