@@ -150,18 +150,22 @@
                   <h1>{{ x.letter }}</h1>
                   <h2>{{ x.for }}</h2>
                 </div>
-
                 <div v-else @click="activeLetter = 0">
                   <h2> БУКВА {{ x.letter }}</h2>
                   <h4 style="font-family: 'Am'">{{ x.title }}</h4>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
 
         <img @click="ro_edit = 0" style="
+=======
+        <img
+          @click="ro_edit = 0"
+          style="
+>>>>>>> d4d7e668ad8b0521d6256693f74052b34bf5c12a
             width: 130px;
             margin: 10px auto;
             margin-bottom: 70px;
@@ -248,7 +252,6 @@
               $store.state.fullname
               }}</router-link>
             </h1>
-            <h3>ученик</h3>
             <h2>
               <router-link to="/courses">МОИ КУРСЫ</router-link>
             </h2>
@@ -343,6 +346,7 @@
                   " src="@/assets/img/btn_1.svg" alt="" />
               </div>
             </div>
+<<<<<<< HEAD
 
             <div class="form-cabinet" style="margin-top: 20px; height: 454px; position: relative">
               <img style="
@@ -356,6 +360,8 @@
                   transform: translate(-50%, -50%);
                 " src="@/assets/img/btn_3.svg" alt="" />
             </div>
+=======
+>>>>>>> d4d7e668ad8b0521d6256693f74052b34bf5c12a
           </div>
         </div>
       </div>
@@ -391,10 +397,7 @@ export default {
     };
   },
   mounted() {
-    if (!this.$store.state.token) {
-      this.$router.push("/login");
-      return true;
-    }
+   
 
     axios
       .post(

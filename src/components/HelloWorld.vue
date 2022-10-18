@@ -1,11 +1,21 @@
 <template>
   <div class="hello">
+    <div class="header__mwrap bar d-md-none d-sm-flex" style="position:fixed;top:0;z-index: 999;width:100%">
+        <span><a @click="isActiveMob = true" class="bar-icon siteBar-btn">
+            <span></span>
+          </a></span>
+        <span class="header__mstree">
+          <router-link to="/"><img src="@/assets/img/tree.png" alt="" class="header__mtree"></router-link>
+        </span>
+        <span class="header__msava">
+          <router-link to="/courses"><img src="@/assets/img/ava.png" alt="" class="header__mava"></router-link>
+        </span>
+      </div>
     <div class="header-area">
-
       <div class="header_wrap d-none d-md-flex">
-        <router-link to="/courses"> <span class="header_v">возрождение</span></router-link>
+        <router-link to="/"> <span class="header_v">возрождение</span></router-link>
 
-        <router-link to="/courses"><span class="header_vi">выбрать курс</span></router-link>
+        <a style="cursor:pointer" @click="scrollToCur()"><span class="header_vi">выбрать курс</span></a>
         <router-link to="/webinar"><span class="header_vi">мероприятия</span></router-link>
         <router-link to="/corp"><span class="header_vi">корпоративное обучение</span></router-link>
 
@@ -19,17 +29,7 @@
 
         </div>
       </div>
-      <div class="header__mwrap bar d-md-none d-sm-flex">
-        <span><a @click="isActiveMob = true" class="bar-icon siteBar-btn">
-            <span></span>
-          </a></span>
-        <span class="header__mstree">
-          <router-link to="/courses"><img src="@/assets/img/tree.png" alt="" class="header__mtree"></router-link>
-        </span>
-        <span class="header__msava">
-          <router-link to="/courses"><img src="@/assets/img/ava.png" alt="" class="header__mava"></router-link>
-        </span>
-      </div>
+     
     </div>
     <!-- mobile-menu START -->
     <div class="mobile-menu" :class="{ siteBar: isActiveMob }">
@@ -39,27 +39,35 @@
             src="@/assets/img/mob_tree3.png" alt="" /></router-link>
         <h1>выбрать курс</h1>
         <ul>
-          <li>
-            <router-link @click="isActiveMob= false" :to="'/corp'">КОРПОРАТИВНОЕ ОБУЧЕНИЕ</router-link>
+          <li v-if="!$store.state.token">
+            <a @click="goReg()" >РЕГИСТРАЦИЯ</a>
+          </li>
+          <li v-if="$store.state.token">
+            <router-link @click="isActiveMob= false" :to="'/corp'">МОЯ БИБЛИОТЕКА</router-link>
           </li>
 
-          <li>
+          <li v-if="$store.state.token">
             <router-link @click="isActiveMob= false" :to="'/cabinet'">ЛИЧНЫЙ КАБИНЕТ</router-link>
           </li>
+          <li>
+            <router-link @click="isActiveMob= false" :to="'/corp'">МЕРОПРИЯТИЯ</router-link>
+          </li>
+
           <li>
             <router-link @click="isActiveMob= false" :to="'#'">TELEGRAM-КАНАЛ</router-link>
           </li>
           <li>
-            <router-link @click="isActiveMob= false" :to="'/courses'">МОИ КУРСЫ</router-link>
-          </li>
-          <li>
-            <router-link @click="isActiveMob= false" :to="'/webinar'">ВЕБИНАРЫ</router-link>
+            <router-link @click="isActiveMob= false" :to="'/courses'">КОРПОРАТИВНОЕ ОБУЧЕНИЕ</router-link>
           </li>
         </ul>
         <h1>о нас</h1>
-        <div class="mobile__e__btn">
+        <div class="mobile__e__btn" @click="logout()" v-if="$store.state.token">
+          <h1>выход</h1>
+        </div>
+        <div class="mobile__e__btn" @click="goReg()" v-else>
           <h1>вход</h1>
         </div>
+        
       </div>
     </div>
 
@@ -75,6 +83,26 @@ export default {
     msg: String,
   },
   methods: {
+    goReg(){
+      this.$router.push("/login");
+      this.isActiveMob = false;
+    },
+    logout() {
+      localStorage.clear();
+      this.$store.state.token = null;
+      this.$store.state.username = null;
+      this.$store.state.email = null;
+      this.$router.push("/login");
+      this.isActiveMob = false;
+    },
+    scrollToCur() {
+      this.$router.push("/");
+      this.$store.state.scrolerCur = true;
+      if(document.getElementById("courses")){
+        document.getElementById("courses").scrollIntoView();
+
+      }
+    },
     serach() {
       if (!this.sea) {
         return true;
@@ -82,11 +110,7 @@ export default {
       this.$router.push('/search/' + this.sea)
 
     },
-    scrollToCur() {
-      this.$router.push("/");
-      this.$store.state.scrolerCur = true;
-      document.getElementById("courses").scrollIntoView();
-    },
+   
     logout() {
       window.localStorage.clear();
       this.$store.state.token = "";
@@ -270,7 +294,9 @@ export default {
 .mobile-menu {
   background-color: #272727 !important;
 }
-
+.mobile-menu li a{
+  font-size: 33px;
+}
 .olyMob {
   display: none;
 }

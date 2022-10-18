@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="kurcy-banners">
-                  <div class="row">
-                    <div
+                  <div class="row" >
+                    <div 
                       v-bind:key="x.id"
                       v-for="x in courses"
                       class="col-md-6"
@@ -42,9 +42,10 @@
                           <span>{{ x.price }} Р</span>
                         </div>
                         <p class="Course__about">{{ x.description }}</p>
-                        <div class="course__btn__wrap d-none d-md-flex">
-                          <span  class="course__btn_mr" @click="addToCart(x)"  >
-                            <div class="course__btn">в корзину</div>
+                        <div class="course__btn__wrap d-none d-md-flex" >
+                          <span  class="course__btn_mr"  ref="animate2">
+                            <div class="course__btn" @click="addToCart(x)" v-if="!inCart(x.id)">в корзину</div>
+                            <div class="course__btn" @click="$router.push('/cart')" v-else>оплатить</div>
                           </span>
                           <router-link  class="course__btn_mr"  :to="'/course/'+x.id">
                             <div class="course__btn">подробнее</div>
@@ -126,6 +127,7 @@
 <script>
 // @ is an alias to /src
 import axios from "axios";
+import autoAnimate from "@formkit/auto-animate"
 
 export default {
   name: "Home",
@@ -198,6 +200,9 @@ export default {
     };
   },
   methods: {
+    inCart(id){
+      return this.$store.state.cartData.some(e => e.id === id) ? true: false;  
+    },  
     addToCart(curse){
       this.$store.state.cartData.push(curse);
       localStorage.setItem('cartData',JSON.stringify(this.$store.state.cartData))
@@ -219,6 +224,8 @@ export default {
     },
   },
   mounted() {
+    
+
     setTimeout(() => {
       this.roCur("courses");
     }, 7000);
@@ -279,6 +286,7 @@ export default {
       .then((response) => {
         console.log(response);
         this.courses = response.data.data;
+        autoAnimate(this.$refs.animate2)
         return false;
 
         localStorage.setItem("token", response.data.user.token);
@@ -301,7 +309,7 @@ export default {
   margin-bottom: 80px;
   display: inline-block;
   background-image: url(@/assets/img/currama.png);
-  font-size: 128px;
+  font-size: 90px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 0 45px;
