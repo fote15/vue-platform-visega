@@ -45,10 +45,7 @@
               />
               <img @click="fullVid" src="@/assets/img/Preview.png" alt="" />
             </div>
-            <div class="price__buttons">
-              <span style="color: #f7f6eb"> {{ data.price }} р</span>
-              <span>В КОРЗИНУ</span>
-            </div>
+          
           </div>
           
         </div>
@@ -355,6 +352,9 @@ export default {
     background-image: url("@/assets/img/rama00.svg");
     background-size: contain;
     background-repeat: no-repeat;
+    margin-top: 10px;
+    margin: 0 auto;
+    background-position: center;
   }
 }
 
@@ -450,30 +450,19 @@ export default {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
+  
   background-color: #d9d9d92f;
   border: 60px solid transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: #d8d8d8;
   border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 6px solid transparent;
   background-clip: content-box;
 }
-
 .sv_c {
   transform: translateX(-50%);
   position: absolute;
@@ -803,6 +792,7 @@ export default {
 
   .cr-content-in {
     margin-right: 20px;
+    margin-left: 20px;
     overflow: auto;
   }
 }

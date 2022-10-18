@@ -65,6 +65,10 @@ export default {
     if (localStorage.getItem("ava")) {
       this.$store.state.ava = localStorage.getItem("ava");
     }
+    if (localStorage.getItem("cartData")) {
+      this.$store.state.cartData = JSON.parse( localStorage.getItem("cartData"));
+    }
+
 
 
 
@@ -86,12 +90,7 @@ export default {
 }
 
 @media only screen and (max-width: 770px) {
-  .hello{
-    max-height: 126px!important;
-  }
-  .hello{
-    border: none!important;
-  }
+ 
 
 }
 
