@@ -20,6 +20,9 @@
             </h2>
 
             <h2><router-link to="/prize">ДОСТИЖЕНИЯ</router-link></h2>
+            <h2>
+              <router-link to="/notifications">УВЕДОМЛЕНИЯ</router-link>
+            </h2>
             <br />
             <br />
             <h2><a @click="logout()">выйти</a></h2>

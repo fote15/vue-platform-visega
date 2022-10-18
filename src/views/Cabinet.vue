@@ -3,53 +3,49 @@
     <div class="cabinet-main d-block d-md-none">
       <div class="user-image">
         <label for="file-input">
-        
+
           <div class="circle2" v-if="!$store.state.ava" style="position:relative">
             <img src="@/assets/img/plus.png" class="plusIcon" alt="">
           </div>
-                <div class="circle2" v-else  :style="'background-image:url('+$store.state.ava+');background-size:cover;background-position:center;'"></div>
-              </label>
+          <div class="circle2" v-else
+            :style="'background-image:url('+$store.state.ava+');background-size:cover;background-position:center;'">
+          </div>
+        </label>
 
-      
+
       </div>
-      <h1
-        style="
+      <h1 style="
           margin-bottom: 0;
           padding-bottom: 0;
           line-height: 50px;
           font-size: 38px;
-        "
-        v-if="!error_msg"
-      >
+        " v-if="!error_msg">
         {{ $store.state.fullname }}
       </h1>
 
-      <h1
-          style="
+      <h1 style="
             margin-bottom: 0;
           padding-bottom: 0;
           font-size: 38px;
           min-height:0;
-          "
-          class="text-center d-block d-md-none"
-          v-if="error_msg"
-        >
-          {{ error_msg }}
-        </h1>
+          " class="text-center d-block d-md-none" v-if="error_msg">
+        {{ error_msg }}
+      </h1>
 
 
       <input type="text" placeholder="" v-model="email" class="phone_email" disabled="true" />
       <div v-if="ro_edit == 0">
         <h2>
-          <router-link to="#" @click="ro_edit = 1"
-            >РЕДАКТИРОВАТЬ ПРОФИЛЬ</router-link
-          >
+          <router-link to="#" @click="ro_edit = 1">РЕДАКТИРОВАТЬ ПРОФИЛЬ</router-link>
         </h2>
         <h2>
           <router-link to="#" @click="ro_edit = 2">ОБРАТНАЯ СВЯЗЬ</router-link>
         </h2>
         <h2>
           <router-link to="#" @click="ro_edit = 3">ДОСТИЖЕНИЯ</router-link>
+        </h2>
+        <h2>
+          <router-link to="#" @click="ro_edit = 4">УВЕДОМЛЕНИЯ</router-link>
         </h2>
 
         <h2>
@@ -59,63 +55,38 @@
       </div>
       <!--RED-->
       <div class="d-block d-md-none p90" v-if="ro_edit == 1">
-       
+
         <div>
           <div class="log">
             <span>
-              <input
-                type="text"
-                class="invis_input"
-                v-model="email"
-                placeholder="ПОЧТА"
-              />
+              <input type="text" class="invis_input" v-model="email" placeholder="ПОЧТА" />
             </span>
           </div>
           <div class="log">
             <span>
-              <input
-                type="password"
-                class="invis_input"
-                v-model="oldpas"
-                placeholder="СТАРЫЙ ПАРОЛЬ"
-            /></span>
+              <input type="password" class="invis_input" v-model="oldpas" placeholder="СТАРЫЙ ПАРОЛЬ" /></span>
           </div>
 
           <div class="log">
             <span>
-              <input
-                type="password"
-                class="invis_input"
-                v-model="newpas"
-                placeholder="НОВЫЙ ПАРОЛЬ"
-            /></span>
+              <input type="password" class="invis_input" v-model="newpas" placeholder="НОВЫЙ ПАРОЛЬ" /></span>
           </div>
 
           <div>
-            <img
-              @click="changeinfo()"
-              style="
+            <img @click="changeinfo()" style="
                 width: 130px;
                 margin: 0 auto;
                 margin-top: 30px;
                 display: block;
                 cursor: pointer;
-              "
-              src="@/assets/img/ok.png"
-              alt=""
-            />
-            <img
-              @click="ro_edit = 0"
-              style="
+              " src="@/assets/img/ok.png" alt="" />
+            <img @click="ro_edit = 0" style="
                 width: 130px;
                 margin: 0 auto;
                 margin-bottom: 70px;
                 display: block;
                 cursor: pointer;
-              "
-              src="@/assets/img/cancel.png"
-              alt=""
-            />
+              " src="@/assets/img/cancel.png" alt="" />
           </div>
         </div>
       </div>
@@ -123,78 +94,49 @@
       <!--RED-->
 
       <div class="d-block d-md-none p90" v-if="ro_edit == 2">
-        <h1
-          style="
+        <h1 style="
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
             margin-top: 70px;
             margin-bottom: 10px;
-          "
-          class="text-center d-none d-md-block"
-          v-if="error_msg"
-        >
+          " class="text-center d-none d-md-block" v-if="error_msg">
           {{ error_msg }}
         </h1>
         <div>
           <div class="log">
             <span>
-              <input
-                type="text"
-                autocomplete="chrome-off"
-                class="invis_input"
-                v-model="contact_1"
-                placeholder="Ваше имя"
-              />
+              <input type="text" autocomplete="chrome-off" class="invis_input" v-model="contact_1"
+                placeholder="Ваше имя" />
             </span>
           </div>
           <div class="log">
             <span>
-              <input
-                type="text"
-                autocomplete="chrome-off"
-                class="invis_input"
-                v-model="contact_2"
-                placeholder="Введите вашу почту"
-            /></span>
+              <input type="text" autocomplete="chrome-off" class="invis_input" v-model="contact_2"
+                placeholder="Введите вашу почту" /></span>
           </div>
 
           <div class="log">
             <span>
-              <input
-                type="text"
-                autocomplete="chrome-off"
-                class="invis_input"
-                v-model="contact_3"
-                placeholder="Текст"
-            /></span>
+              <input type="text" autocomplete="chrome-off" class="invis_input" v-model="contact_3"
+                placeholder="Текст" /></span>
           </div>
 
           <div>
-            <img
-              @click="send()"
-              style="
+            <img @click="send()" style="
                 width: 130px;
                 margin: 0 auto;
                 margin-top: 30px;
                 display: block;
                 cursor: pointer;
-              "
-              src="@/assets/img/ok.png"
-              alt=""
-            />
-            <img
-              @click="ro_edit = 0"
-              style="
+              " src="@/assets/img/ok.png" alt="" />
+            <img @click="ro_edit = 0" style="
                 width: 130px;
                 margin: 0 auto;
                 margin-bottom: 70px;
                 display: block;
                 cursor: pointer;
-              "
-              src="@/assets/img/cancel.png"
-              alt=""
-            />
+              " src="@/assets/img/cancel.png" alt="" />
           </div>
         </div>
       </div>
@@ -219,18 +161,80 @@
           </div>
         </div>
 
-        <img
-          @click="ro_edit = 0"
-          style="
+        <img @click="ro_edit = 0" style="
             width: 130px;
             margin: 10px auto;
             margin-bottom: 70px;
             display: block;
             cursor: pointer;
-          "
-          src="@/assets/img/cancel.png"
-          alt=""
-        />
+          " src="@/assets/img/cancel.png" alt="" />
+      </div>
+
+
+      <div class="d-block d-md-none p90" v-if="ro_edit == 4">
+        <div class="col-md-12">
+          <div class="form-cabinet">
+            <h1 class="cab__uve">УВЕДОМЛЕНИЯ</h1>
+            <div class="form__wrapper" @click="ro_edit = 5">
+              <div class="not__img__w">
+                <img src="@/assets/img/notifications_p.png" alt="">
+              </div>
+
+              <div class="not__wrap">
+                <h1>новое достижение!</h1>
+                <p>Поздравляем Вас, вы получили asd asdd</p>
+              </div>
+              <div class="not__wrap2">
+                <span>25.12</span>
+                <img src="@/assets/img/notification_ellipse.png" alt="">
+              </div>
+
+
+            </div>
+            <h1 v-if="data.length < 1">тут пока пусто...</h1>
+
+          </div>
+        </div>
+
+        <img @click="ro_edit = 0" style="
+            width: 130px;
+            margin: 10px auto;
+            margin-bottom: 70px;
+            display: block;
+            cursor: pointer;
+          " src="@/assets/img/cancel.png" alt="" />
+      </div>
+      <div class="d-block d-md-none p90" v-if="ro_edit == 5">
+        <div class="col-md-12">
+          <div class="form-cabinet">
+            <div class="form-cab-wrap">
+              <span><img src="@/assets/img/notifications_p.png" alt=""></span>
+              <h1 class="mcab__uve">ВОЗРОЖДЕНИЕ</h1>
+            </div>
+            <div class="mform__wrapper">
+              <h1>Тема Письма</h1>
+              <p>А ещё явные признаки победы институционализации, инициированные исключительно синтетически, призваны к
+                ответу! Однозначно, непосредственные участники технического прогресса, которые представляют собой яркий
+                пример континентально-европейского типа политической культуры, будут разоблачены. Прежде всего,
+                семантический разбор внешних противодействий, в своём классическом представлении, допускает внедрение
+                форм воздействия.</p>
+              <p>Но ключевые особенности структуры проекта представляют собой не что иное, как квинтэссенцию победы
+                маркетинга над разумом и должны быть функционально разнесены на независимые элементы.</p>
+
+              <p style="text-align:right;">16.04</p>
+            </div>
+            <h1 v-if="data.length < 1">тут пока пусто...</h1>
+
+          </div>
+        </div>
+
+        <img @click="ro_edit = 0" style="
+            width: 130px;
+            margin: 10px auto;
+            margin-bottom: 70px;
+            display: block;
+            cursor: pointer;
+          " src="@/assets/img/backspace.png" alt="" />
       </div>
       <!--FORM-->
     </div>
@@ -241,7 +245,7 @@
           <div class="col-md-3">
             <h1>
               <router-link to="/cabinet" class="cabinet_van_active">{{
-                $store.state.fullname
+              $store.state.fullname
               }}</router-link>
             </h1>
             <h3>ученик</h3>
@@ -254,6 +258,9 @@
             <h2>
               <router-link to="/prize">ДОСТИЖЕНИЯ</router-link>
             </h2>
+            <h2>
+              <router-link to="/notifications">УВЕДОМЛЕНИЯ</router-link>
+            </h2>
             <br />
             <br />
             <h2><a @click="logout()">выйти</a></h2>
@@ -261,15 +268,11 @@
 
           <div class="col-md-6">
             <div class="form-cabinet form-cabinet_main">
-              <h1
-                class="text-center"
-                style="
+              <h1 class="text-center" style="
                   white-space: nowrap;
                   text-overflow: ellipsis;
                   overflow: hidden;
-                "
-                v-if="!error_msg"
-              >
+                " v-if="!error_msg">
                 ПРИВЕТ,{{ $store.state.fullname }}
               </h1>
               <h1 class="text-center" v-if="error_msg">
@@ -280,18 +283,14 @@
                   <label for="file-input">
                     <button class="btn importar" type="button"></button>
                   </label>
-                  <input
-                  accept="image/png,  image/jpeg"
-                    @change="fileChanged($event)"
-                    ref="fileInput"
-                    class="file-input"
-                    id="file-input"
-                    type="file"
-                  />
+                  <input accept="image/png,  image/jpeg" @change="fileChanged($event)" ref="fileInput"
+                    class="file-input" id="file-input" type="file" />
                 </div>
 
                 <div class="circle2" v-if="!$store.state.ava"></div>
-                <div class="circle2" v-else  :style="'background-image:url('+$store.state.ava+');background-size:cover;background-position:center;'"></div>
+                <div class="circle2" v-else
+                  :style="'background-image:url('+$store.state.ava+');background-size:cover;background-position:center;'">
+                </div>
               </div>
 
               <h1 class="relative" style="border-bottom: 2px solid white">
@@ -310,76 +309,43 @@
                   </div>
                 </div>
               </h1>
-              <span class="fonamer"
-                >Включить смс-оповещения
-                <input
-                  style="
+              <span class="fonamer">Включить смс-оповещения
+                <input style="
                     width: unset;
                     transform: translateY(3px);
                     background-color: rgba(0, 0, 0, 0);
-                  "
-                  type="checkbox"
-                />
+                  " type="checkbox" />
               </span>
-              <br /><img
-                @click="changeinfo()"
-                style="
+              <br /><img @click="changeinfo()" style="
                   width: 130px;
                   margin: 10px auto;
                   display: block;
                   cursor: pointer;
-                "
-                src="@/assets/img/btn_1.svg"
-                alt=""
-              />
+                " src="@/assets/img/btn_1.svg" alt="" />
             </div>
           </div>
 
           <div class="col-md-3">
             <div class="form-cabinet" style="height: 212px">
-              <img
-                class="form-cabinet-img_open"
-                v-if="!open_pass"
-                @click="open_pass = true"
-                style="width: 254px; display: block; cursor: pointer"
-                src="@/assets/img/btn_2.svg"
-                alt=""
-              />
+              <img class="form-cabinet-img_open" v-if="!open_pass" @click="open_pass = true"
+                style="width: 254px; display: block; cursor: pointer" src="@/assets/img/btn_2.svg" alt="" />
               <div v-if="open_pass" style="text-align: center">
-                <input
-                  class="gradient-input"
-                  placeholder="Старый пароль..."
-                  type="password"
-                  v-model="oldpas"
-                /><br /><br />
-                <input
-                  class="gradient-input"
-                  placeholder="Новый пароль..."
-                  type="password"
-                  v-model="newpas"
-                />
+                <input class="gradient-input" placeholder="Старый пароль..." type="password"
+                  v-model="oldpas" /><br /><br />
+                <input class="gradient-input" placeholder="Новый пароль..." type="password" v-model="newpas" />
                 <br />
                 <br />
-                <img
-                  @click="changeinfoPass"
-                  style="
+                <img @click="changeinfoPass" style="
                     width: 130px;
                     margin: 0 auto;
                     display: block;
                     cursor: pointer;
-                  "
-                  src="@/assets/img/btn_1.svg"
-                  alt=""
-                />
+                  " src="@/assets/img/btn_1.svg" alt="" />
               </div>
             </div>
 
-            <div
-              class="form-cabinet"
-              style="margin-top: 20px; height: 454px; position: relative"
-            >
-              <img
-                style="
+            <div class="form-cabinet" style="margin-top: 20px; height: 454px; position: relative">
+              <img style="
                   width: 130px;
                   margin: 0 auto;
                   display: block;
@@ -388,10 +354,7 @@
                   top: 50%;
                   left: 50%;
                   transform: translate(-50%, -50%);
-                "
-                src="@/assets/img/btn_3.svg"
-                alt=""
-              />
+                " src="@/assets/img/btn_3.svg" alt="" />
             </div>
           </div>
         </div>
@@ -459,7 +422,7 @@ export default {
     fileChanged() {
       var data = new FormData();
       var file = this.$refs.fileInput.files[0];
-      if(!file){
+      if (!file) {
         return true;
       }
       data.append("ava", file);
@@ -471,11 +434,11 @@ export default {
         })
         .then((response) => {
           this.error_msg = "Сохранено!";
-        if(response.data.data.ava){
-          this.$store.state.ava = response.data.data.ava;
-          localStorage.setItem("ava", response.data.data.ava);
-        }
-          
+          if (response.data.data.ava) {
+            this.$store.state.ava = response.data.data.ava;
+            localStorage.setItem("ava", response.data.data.ava);
+          }
+
 
           setTimeout(() => {
             this.error_msg = false;
@@ -490,13 +453,13 @@ export default {
         });
     },
     changeinfo() {
-      if(this.oldpas || this.newpas){
-        if(this.newpas.length<6){
+      if (this.oldpas || this.newpas) {
+        if (this.newpas.length < 6) {
           this.error_msg = "Пароль должен состоять минимум из 6 символов";
-            setTimeout(() => {
-              this.error_msg = false;
-            }, 2000);
-            return true;  
+          setTimeout(() => {
+            this.error_msg = false;
+          }, 2000);
+          return true;
         }
         axios
           .post(
@@ -528,7 +491,7 @@ export default {
               this.error_msg = false;
             }, 4000);
           });
-          return true;
+        return true;
 
       }
       this.activeChangePass = true;
@@ -632,22 +595,170 @@ export default {
 };
 </script>
 <style scoped>
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.not_wrap {
+  min-width: 60px;
+}
+
+
+
+.not__img__w {
+  margin-left: 13px;
+  width: 50px;
+}
+
+.border_wrap {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.not__wrap {
+  margin-left: 14px;
+}
+
+.cab__uve {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: 0.0264em;
+  text-transform: lowercase;
+  color: #FFFFFF;
+  margin-bottom: 90px;
+}
+
+.form-cab-wrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 30px;
+  margin-bottom: 69px;
+}
+
+.mform__wrapper {
+  width: 270px;
+  text-align: left;
+  background: #2B2B2B;
+  border-radius: 8px;
+  margin-left: 45px;
+}
+
+.mform__wrapper h1 {
+  font-family: 'American Typewriter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px !important;
+  line-height: 14px;
+  display: flex;
+  align-items: flex-end;
+  color: #F2994A;
+  padding-top: 8px;
+  padding-left: 10px;
+
+}
+
+.mform__wrapper p {
+  font-family: 'American Typewriter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px !important;
+  line-height: 18px;
+  color: #FFFFFF;
+  padding-left: 10px;
+  padding-bottom: 12px;
+  padding-right: 26px;
+}
+
+
+.form-cab-wrap h1 {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px !important;
+  line-height: 35px;
+  display: flex;
+  align-items: flex-end;
+  text-transform: lowercase;
+  color: #D9D9D9;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.not__wrap h1 {
+  font-family: 'Amsterdam Deco One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px !important;
+  line-height: 26px;
+  display: flex;
+  align-items: flex-end;
+  text-transform: lowercase;
+  color: #D9D9D9;
+}
+
+.not__wrap p {
+  font-family: 'American Typewriter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: flex-end;
+  color: #A7AFB7;
+
+}
+
+.not__wrap2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 17px;
+}
+
+.not__wrap2 span {
+  font-family: 'American Typewriter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  color: #A1A1A1;
+  opacity: 0.6;
+}
+
+.not__wrap2 img {
+  margin: 7px 0 0 5px;
+
+  width: 20px;
+  height: 20px;
+}
+
 .log {
   padding-left: 23px;
   padding-right: 23px;
 }
+
 #xslUpload {
   padding-top: 47px;
   margin-bottom: 15px;
 }
-#xslUpload > label {
+
+#xslUpload>label {
   position: absolute;
   z-index: 99;
   right: 50%;
 
   cursor: pointer;
 }
-#xslUpload > .file-input {
+
+#xslUpload>.file-input {
   display: none;
 }
 
@@ -668,15 +779,16 @@ export default {
   padding-bottom: 10px;
 }
 
-#xslUpload > label:hover > .importar {
-}
+#xslUpload>label:hover>.importar {}
 
 .iput_des_file {
   background-image: url("@/assets/img/Group1.svg");
 }
+
 .d-block {
   min-height: 90vh;
 }
+
 .phone_email {
   background-color: rgba(0, 0, 0, 0) !important;
   font-size: 14px !important;
@@ -688,21 +800,21 @@ export default {
 }
 
 @media only screen and (max-width: 1400px) {
-  .text_inp{
+  .text_inp {
     font-size: 60px;
   }
 }
 
 @media only screen and (max-width: 1200px)and (min-width: 992px) {
-  .text_inp{
-    font-size: 40px!important;
+  .text_inp {
+    font-size: 40px !important;
     transform: translateY(30px);
   }
 }
 
 @media only screen and (max-width: 992px) {
-  .text_inp{
-    font-size: 20px!important;
+  .text_inp {
+    font-size: 20px !important;
     transform: translateY(60px) !important;
   }
 }
@@ -712,9 +824,11 @@ export default {
     background-image: none !important;
     background-color: #272727 !important;
   }
+
   input {
     background-color: #272727 !important;
   }
+
   .cabinet-main {
     background-image: none !important;
     background-color: #272727 !important;
@@ -723,6 +837,7 @@ export default {
   .login__global__form_p {
     padding: 0 15px !important;
   }
+
   .login__global__form {
     margin: 0 auto !important;
     border: 0px solid black !important;
@@ -736,6 +851,7 @@ export default {
   input {
     font-family: "Am" !important;
   }
+
   .container2 {
     display: block;
     position: relative;
@@ -771,12 +887,12 @@ export default {
   }
 
   /* On mouse-over, add a grey background color */
-  .container2:hover input ~ .checkmark {
+  .container2:hover input~.checkmark {
     background-color: #ccc;
   }
 
   /* When the checkbox is checked, add a blue background */
-  .container2 input:checked ~ .checkmark {
+  .container2 input:checked~.checkmark {
     background-color: rgba(0, 0, 0, 0);
   }
 
@@ -788,7 +904,7 @@ export default {
   }
 
   /* Show the checkmark when checked */
-  .container2 input:checked ~ .checkmark:after {
+  .container2 input:checked~.checkmark:after {
     display: block;
   }
 
@@ -858,6 +974,7 @@ export default {
     width: 72px !important;
     height: 72px !important;
   }
+
   .cabinet-main {
     padding-top: 25px !important;
   }
@@ -869,9 +986,11 @@ export default {
   border: 2px solid #a99060;
   border-radius: 5px;
 }
+
 .gradient-input {
   font-size: 20px !important;
 }
+
 .hiddenBl {
   display: none !important;
 }
@@ -883,15 +1002,18 @@ export default {
 .form-cabinet-img {
   position: relative;
 }
+
 input {
   font-family: "Am" !important;
   color: white !important;
   font-size: 32px !important;
 }
+
 .horse {
   background-image: url(@/assets/img/horse.png) !important;
   background-color: none !important;
 }
+
 .horse .cabinet-main {
   background-color: rgba(0, 0, 0, 0) !important;
 }
@@ -924,8 +1046,9 @@ input {
   /* !importanté */
   border-radius: 1em;
 }
-.gradient-box {
-}
+
+.gradient-box {}
+
 .gradient-box:before {
   content: "";
   position: absolute;
@@ -993,14 +1116,17 @@ input {
   position: relative;
   min-height: 270px;
 }
+
 .d-block .user-image {
   position: relative;
   min-height: 90px;
 }
+
 .d-block a {
   font-family: "Amsterdam Deco One";
   font-weight: 400;
 }
+
 .d-block {
   text-align: center;
 }
@@ -1041,14 +1167,17 @@ a:hover {
   .log .main__content {
     background-image: url("@/assets/img/mob_tree.png") !important;
   }
+
   .log input,
   .log textarea {
     background-color: #272727 !important;
   }
+
   .log input {
     transform: scale(0.94);
     padding: 0 !important;
   }
+
   .log span {
     position: relative;
     height: 54px !important;
@@ -1056,6 +1185,7 @@ a:hover {
     z-index: 0;
     margin-bottom: 10px;
   }
+
   .log input {
     z-index: 9;
     position: relative;
@@ -1065,6 +1195,7 @@ a:hover {
     color: white;
     border: none;
   }
+
   .log span::before {
     content: "";
     position: absolute;
@@ -1082,26 +1213,32 @@ a:hover {
     display: block;
     margin: 0 auto;
   }
+
   .log input {
     font-size: 13px !important;
     height: 54px !important;
     padding: 18px 13px;
   }
+
   textarea {
     padding: 18px 13px;
   }
+
   .borders10 {
     border: none !important;
   }
+
   .p90 {
     padding: 10px !important;
   }
+
   .title_ccorp {
     font-size: 40px !important;
     display: inline-block;
     line-height: 30px !important;
     margin-right: 10px;
   }
+
   .title_ccorp2 {
     display: inline-block;
     line-height: 30px !important;
@@ -1112,9 +1249,11 @@ a:hover {
   .borders10 {
     border: 5px solid white;
   }
+
   .log input {
     text-align: center;
   }
+
   .log input::placeholder {
     color: white;
   }
@@ -1131,32 +1270,32 @@ a:hover {
 
   .prize_l {
     margin: 0 auto;
-  width: 266px;
-  height: 266px;
+    width: 266px;
+    height: 266px;
 
-  padding: 20px;
-  background: #272727;
-  border: 5px solid #a99060;
-  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.55);
-  border-radius: 30px;
-}
+    padding: 20px;
+    background: #272727;
+    border: 5px solid #a99060;
+    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.55);
+    border-radius: 30px;
+  }
 
-.form-cabinet {
-    padding: 0!important;
-    border:none!important;
-    background-color: rgba(0,0,0,0)!important;
-    box-shadow: none!important;
+  .form-cabinet {
+    padding: 0 !important;
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
   }
 
 }
 
-.plusIcon{
+.plusIcon {
   position: absolute;
   width: 13px;
   height: 13px;
-  left: 50%!important;
-  top: 50%!important;
-  transform: translate(-50%,-50%)!important ;
-  
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
 }
 </style>
